@@ -18,7 +18,7 @@ export default {
   mounted() {
     let store = this.$store;
     getToken().then(res => {
-      store.commit('setToken', res.data.data.token);
+      store.commit('setToken', res.data.token);
     });
   }
 }

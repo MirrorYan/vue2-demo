@@ -1,5 +1,6 @@
 import axios from "axios";
 import store from "../store";
+import router from "../router";
 
 // 设置默认请求超时时间 30s
 axios.defaults.timeout = 30000;
@@ -22,24 +23,21 @@ axios.interceptors.request.use(
 // Response 拦截器
 axios.interceptors.response.use(
   response => {
-    return response
+    return response.data;
   },
   error => {
     if (error.response) {
-      switch (error.response.status) {
-        case 401:
-          // 401 清除token信息并跳转到登录页面
-          store.commit(types.LOGOUT)
-          
-          // 只有在当前路由不是登录页面才跳转
-          router.currentRoute.path !== 'login' &&
-            router.replace({
-              path: 'login',
-              query: { redirect: router.currentRoute.path },
-            })
+      // 401 清除token信息并跳转到登录页面
+      if (error.response.status === 401) {
+        store.commit(types.LOGOUT)
+        // 只有当前页面不是login页面时才跳转
+        router.currentRoute.path !== 'login' &&
+          router.replace({
+            path: 'login',
+            query: { redirect: router.currentRoute.path }
+          });
       }
     }
-    // console.log(JSON.stringify(error));//console : Error: Request failed with status code 402
     return Promise.reject(error.response.data)
   },
 );
