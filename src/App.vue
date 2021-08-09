@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { getToken } from './request/api';
+import { getToken, getInfo } from './request/api';
 
 export default {
   name: 'App',
@@ -15,11 +15,16 @@ export default {
       start: 'Project is started.'
     }
   },
-  mounted() {
+  created () {
     let store = this.$store;
     getToken().then(res => {
-      store.commit('setToken', res.data.token);
+      store.dispatch('loginIn', res.data);
     });
+
+    setTimeout(() => {
+      getInfo();
+      getInfo();
+    }, 5000);
   }
 }
 </script>

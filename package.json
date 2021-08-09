@@ -2,6 +2,10 @@
   "name": "vue-demo",
   "version": "1.0.0",
   "description": "Project for personal learning and test.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MirrorYan/vue2-demo.git"
+  },
   "main": "main.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config webpack.config.js",
