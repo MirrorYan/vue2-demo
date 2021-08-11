@@ -52,7 +52,6 @@ axios.interceptors.request.use(
     if (isTokenExpired() && !config.url.includes('/token')) {
       if (!isRefreshing) {
         isRefreshing = true;
-        console.log(config.url)
         // Refresh token
         axios({
           url: '/refresh/token?refreshToken=' + store.state.refresh_token,
