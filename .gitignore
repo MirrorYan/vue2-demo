@@ -1,2 +1,5 @@
-
+# Dependenct package
 node_modules/*
+
+# Compile package
+dist/*

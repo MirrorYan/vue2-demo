@@ -1,12 +1,11 @@
 <template>
   <div id="app">
-    {{ start }}
     <router-view />
   </div>
 </template>
 
 <script>
-import { getToken, getInfo } from './request/api';
+import { getToken } from './request/api';
 
 export default {
   name: 'App',
@@ -17,14 +16,9 @@ export default {
   },
   created () {
     let store = this.$store;
-    getToken().then(res => {
-      store.dispatch('loginIn', res.data);
-    });
-
-    setTimeout(() => {
-      getInfo();
-      getInfo();
-    }, 5000);
+    // getToken().then(res => {
+    //   store.dispatch('loginIn', res.data);
+    // });
   }
 }
 </script>
