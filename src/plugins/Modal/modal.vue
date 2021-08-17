@@ -27,13 +27,13 @@ export default {
   },
   methods: {
     handleShow () {
-
+      this.show = true;
     },
     handleClose () {
       this.show = false;
     },
     handleCheck () {
-
+      // callback
     }
   }
 }

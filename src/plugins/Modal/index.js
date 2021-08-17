@@ -1,4 +1,4 @@
-import ModalTpl from './main.vue';
+import ModalTpl from './modal.vue';
 
 const Modal = {
   install (Vue, options) {
