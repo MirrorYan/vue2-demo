@@ -15,10 +15,10 @@ export default {
     }
   },
   created () {
-    let store = this.$store;
-    // getToken().then(res => {
-    //   store.dispatch('loginIn', res.data);
-    // });
+    this.$modal({
+      title: 'Test modal title',
+      message: 'Test modal message'
+    })
   }
 }
 </script>

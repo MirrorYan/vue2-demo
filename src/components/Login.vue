@@ -1,10 +1,5 @@
 <template>
   <div class="login-container">
-    <el-form :model="form">
-      <el-form-item label="Name">
-        <el-input v-model="form.name" />
-      </el-form-item>
-    </el-form>
   </div>
 </template>
 
