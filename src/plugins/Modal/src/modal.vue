@@ -25,7 +25,6 @@ export default {
   data () {
     return {
       visible: false,
-      show: false,
       title: null,
       message: '',
       callback: null
@@ -36,14 +35,14 @@ export default {
       const { title, message } = options;
       this.title = title;
       this.message = message;
-      this.show = true;
+      this.visible = true;
     },
     handleClose () {
-      this.show = false;
+      this.visible = false;
       this.callback();
     },
     handleCheck () {
-      // callback
+      this.callback();
     }
   }
 }

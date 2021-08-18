@@ -17,9 +17,10 @@ export default {
   created () {
     this.$modal({
       title: 'Test modal title',
-      message: 'Test modal message'
-    }).then(() => {
-      console.log(1);
+      message: 'Test modal message',
+      callback: () => {
+        console.log(1);
+      }
     });
   }
 }
