@@ -1,5 +1,5 @@
 <template>
-  <div class="modal_wrapper" v-if="show">
+  <div class="modal_wrapper" v-if="visible">
     <div class="modal_overlay" @click="handleClose"></div>
     <transition>
       <div class="modal_container">
@@ -24,9 +24,11 @@
 export default {
   data () {
     return {
+      visible: false,
       show: false,
       title: null,
-      message: ''
+      message: '',
+      callback: null
     }
   },
   methods: {
@@ -38,6 +40,7 @@ export default {
     },
     handleClose () {
       this.show = false;
+      this.callback();
     },
     handleCheck () {
       // callback

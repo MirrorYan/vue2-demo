@@ -18,7 +18,9 @@ export default {
     this.$modal({
       title: 'Test modal title',
       message: 'Test modal message'
-    })
+    }).then(() => {
+      console.log(1);
+    });
   }
 }
 </script>
