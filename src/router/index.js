@@ -11,6 +11,11 @@ const router = new Router({
       name: 'Home'
     },
     {
+      path: '/activity',
+      name: 'Activity',
+      component: () => import('@/views/Activity')
+    },
+    {
       path: '/login',
       name: 'Login',
       component: () => import('@/views/Login')
@@ -18,13 +23,14 @@ const router = new Router({
   ]
 });
 
-router.beforeEach((router, redirect, next) => {
-  const token = store.state.token;
-  if (!token && router.path !== '/login') {
-    next({ path: '/login'});
-  } else {
-    next();
-  }
-})
+// 路由钩子 - 未登录状态跳转至登录页
+// router.beforeEach((router, redirect, next) => {
+//   const token = store.state.token;
+//   if (!token && router.path !== '/login') {
+//     next({ path: '/login'});
+//   } else {
+//     next();
+//   }
+// })
 
 export default router;
