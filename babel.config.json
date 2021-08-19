@@ -12,6 +12,10 @@
         "useBuiltIns": "usage",
         "corejs": "3.6.5"
       }
+    ],
+    [
+      "es2015",
+      { "modules": false }
     ]
   ],
   "plugins": [
