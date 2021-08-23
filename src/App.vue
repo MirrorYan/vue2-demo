@@ -33,5 +33,6 @@ export default {
 }
 .main-container {
   height: calc(100vh - 84px);
+  display: flex;
 }
 </style>
